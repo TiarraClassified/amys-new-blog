@@ -9,11 +9,13 @@ export default function Navbar() {
         <div>About</div>
       </Link>
 
-      <img
-        src={Dagger}
-        alt="dagger"
-        style={{ height: "50px", width: "50px" }}
-      />
+      <Link to="/">
+        <img
+          src={Dagger}
+          alt="dagger"
+          style={{ height: "50px", width: "50px" }}
+        />
+      </Link>
       <Link to="/storyroulette" className="nav-link">
         <div>Random Story</div>
       </Link>

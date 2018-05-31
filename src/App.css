@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,300i,400");
+@import url("https://fonts.googleapis.com/css?family=Ultra");
 
 body {
   font-family: "Raleway", sans-serif;
@@ -20,4 +21,24 @@ body {
 
 .nav-link:visited {
   color: black;
+}
+
+#title {
+  font-family: "Ultra", serif;
+  font-size: 85px;
+  text-align: center;
+  color: white;
+  background: url(./testbackground.jpg) repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: backgroundScroll 10s infinite linear;
+}
+
+@keyframes backgroundScroll {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: 100vw;
+  }
 }
