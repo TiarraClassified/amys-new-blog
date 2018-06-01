@@ -54,6 +54,31 @@ body {
   width: 1px;
 }
 
+#about {
+  padding: 80px;
+  position: relative;
+  width: 100vw;
+}
+
+.about-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+}
+
+.about-info p {
+  position: absolute;
+  width: 40%;
+  left: 55%;
+  top: 75%;
+}
+
+.about-info h1 {
+  position: absolute;
+  left: 55%;
+  top: 55%;
+}
+
 .timeline {
   color: #c17d47;
   position: absolute;
