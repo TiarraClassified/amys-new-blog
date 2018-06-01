@@ -4,7 +4,9 @@ export default class Title extends Component {
   constructor() {
     super();
     this.state = {
-      enter: false
+      enter: false,
+      line: false,
+      shiny: false
     };
   }
 
@@ -12,6 +14,12 @@ export default class Title extends Component {
     setTimeout(() => {
       this.setState({ enter: true });
     }, 10);
+    setTimeout(() => {
+      this.setState({ line: true });
+    }, 1500);
+    setTimeout(() => {
+      this.setState({ shiny: true });
+    }, 2300);
   }
   render() {
     return (
@@ -21,22 +29,24 @@ export default class Title extends Component {
           style={
             this.state.enter
               ? {
-                  transform: "translate(0, 0) rotate(0)",
+                  transform: "translate(0, 0)",
                   opacity: 1,
-                  transition: "2s"
+                  transition: "1.5s"
                 }
               : {
-                  transform: "translate(-150px, -250px) rotate(-35deg)",
+                  transform: "translate(-100px, -125px)",
                   opacity: 0
                 }
           }
         >
           Micro Mini <br /> Short Stories
         </p>
+
+        <hr
+          style={this.state.line ? { width: "100vw", transition: "1s" } : {}}
+          id="horizontal-line"
+        />
       </div>
     );
   }
 }
-
-//Might have to make this a stateful component.
-//have component start at angle and invisible. once it loads, have it fall into place. setTimeout to add class that has the animation.

@@ -4,6 +4,8 @@
 body {
   font-family: "Raleway", sans-serif;
   font-weight: 300;
+  background: #f7f5e5;
+  color: #c17d47;
 }
 
 #navbar {
@@ -16,11 +18,11 @@ body {
 .nav-link {
   text-decoration: none;
   padding: 20px;
-  color: black;
+  /* color: black; */
 }
 
 .nav-link:visited {
-  color: black;
+  color: #c17d47;
 }
 
 #title {
@@ -28,10 +30,13 @@ body {
   font-size: 85px;
   text-align: center;
   color: white;
+  height: 80vh;
   background: url(./testbackground.jpg) repeat;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: backgroundScroll 10s infinite linear;
+  padding-top: 10%;
+  line-height: 1.5;
 }
 
 @keyframes backgroundScroll {
@@ -41,4 +46,88 @@ body {
   to {
     background-position-x: 100vw;
   }
+}
+
+#horizontal-line {
+  position: absolute;
+  right: 0;
+  width: 1px;
+}
+
+.timeline {
+  color: #c17d47;
+  position: absolute;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: auto;
+  align-items: center;
+}
+
+.timelinetext {
+  text-align: center;
+  font-size: 50px;
+  border-bottom: 4px double #c17d47;
+  padding: 20px;
+  width: 400px;
+  margin-bottom: 10px;
+}
+
+.right {
+  height: 100px;
+  margin-right: 50%;
+  width: 50%;
+  position: relative;
+  text-align: right;
+  padding-right: 25px;
+}
+
+.right:after {
+  content: "";
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #c17d47;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.left {
+  text-align: left;
+  height: 100px;
+  margin-left: 50%;
+  width: 50%;
+  position: relative;
+  padding-left: 10px;
+  /* padding: 30px; */
+}
+
+.left:before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #c17d47;
+  position: absolute;
+  margin-left: -25px;
+}
+
+.line {
+  border-right: 2px solid #c17d47;
+  width: 2px;
+  position: absolute;
+  left: 50%;
+  margin-left: -8.5px;
+  top: 27%;
+}
+
+.timelinetitle {
+  font-size: 30px;
+  color: #c17d47;
+}
+.timelinedate {
+  font-size: 15px;
+  color: #c17d47;
 }
