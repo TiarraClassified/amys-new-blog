@@ -79,6 +79,25 @@ body {
   top: 55%;
 }
 
+.about-info-2 {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+}
+
+.about-info-2 p {
+  position: absolute;
+  width: 35%;
+  left: 60%;
+  top: 235%;
+}
+
+.about-info-2 h1 {
+  position: absolute;
+  left: 60%;
+  top: 210%;
+}
+
 .timeline {
   color: #c17d47;
   position: absolute;

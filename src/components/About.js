@@ -15,6 +15,8 @@ export default class About extends Component {
     };
   }
 
+  //the website's animations are not linear. They seem to come in fast and then slow down at the end
+
   componentDidMount() {
     setTimeout(() => {
       this.setState({ image1: true });
@@ -30,11 +32,30 @@ export default class About extends Component {
     }, 900);
   }
 
+  switchText1() {
+    this.setState({
+      header1: true,
+      header2: false,
+      text1: true,
+      text2: false
+    });
+  }
+
+  switchText2() {
+    this.setState({
+      header1: false,
+      header2: true,
+      text1: false,
+      text2: true
+    });
+  }
+
   render() {
     return (
       <div id="about">
         <div className="about-info">
           <img
+            onMouseEnter={() => this.switchText1()}
             src={camelHair}
             alt="camel hair"
             style={
@@ -60,11 +81,11 @@ export default class About extends Component {
                 this.state.header1
                   ? {
                       transform: "rotate(0) translate(0,0)",
-                      transition: "1.5s",
+                      transition: "1s",
                       opacity: 1
                     }
                   : {
-                      transform: "rotate(10deg) translate(50%, 50%)",
+                      transform: "rotate(-10deg) translate(-50%, -50%)",
                       opacity: 0
                     }
               }
@@ -76,11 +97,11 @@ export default class About extends Component {
                 this.state.text1
                   ? {
                       transform: "rotate(0) translate(0,0)",
-                      transition: "1.5s",
+                      transition: "1s",
                       opacity: 1
                     }
                   : {
-                      transform: "rotate(10deg) translate(30%, 30%)",
+                      transform: "rotate(-10deg) translate(-30%, -30%)",
                       opacity: 0
                     }
               }
@@ -98,30 +119,76 @@ export default class About extends Component {
             </p>
           </div>
         </div>
-        <img
-          src={camelCoupe}
-          alt="camel coupe"
-          style={
-            this.state.image2
-              ? {
-                  width: "40%",
-                  position: "absolute",
-                  transform: "rotate(0) translate(0)",
-                  transition: "1.5s",
-                  opacity: 1,
-                  top: "200%",
-                  left: "15%"
-                }
-              : {
-                  width: "40%",
-                  position: "absolute",
-                  top: "200%",
-                  left: "15%",
-                  transform: "rotate(10deg) translate(50%, 50%)",
-                  opacity: 0
-                }
-          }
-        />
+        <div className="about-info-2">
+          <img
+            onMouseEnter={() => this.switchText2()}
+            src={camelCoupe}
+            alt="camel coupe"
+            style={
+              this.state.image2
+                ? {
+                    width: "40%",
+                    position: "absolute",
+                    transform: "rotate(0) translate(0)",
+                    transition: "1.5s",
+                    opacity: 1,
+                    top: "200%",
+                    left: "15%"
+                  }
+                : {
+                    width: "40%",
+                    position: "absolute",
+                    top: "200%",
+                    left: "15%",
+                    transform: "rotate(10deg) translate(50%, 50%)",
+                    opacity: 0
+                  }
+            }
+          />
+          <div>
+            <h1
+              style={
+                this.state.header2
+                  ? {
+                      transform: "rotate(0) translate(0,0)",
+                      transition: "1s",
+                      opacity: 1
+                    }
+                  : {
+                      transform: "rotate(-10deg) translate(-50%, -50%)",
+                      opacity: 0
+                    }
+              }
+            >
+              Some other title
+            </h1>
+            <p
+              style={
+                this.state.text2
+                  ? {
+                      transform: "rotate(0) translate(0,0)",
+                      transition: "1s",
+                      opacity: 1
+                    }
+                  : {
+                      transform: "rotate(-10deg) translate(-30%, -30%)",
+                      opacity: 0
+                    }
+              }
+            >
+              Pommy ipsum Elementary my dear Watson put me soaps back on muck
+              about lad, grab a jumper baffled upper class gobsmacked a bit
+              wonky warts and all, Sherlock curry sauce blighty numpty. Could
+              murder a pint have a kip a week on Sunday bovver boots
+              scatterbrained warts and all up North, double dutch terribly
+              wibbly-wobbly timey-wimey stuff well fit black pudding grab a
+              jumper, splendid in a pickle it's nicked therewith drizzle.
+              Terribly gutted tad down the local curtain twitching chav up at
+              the crack of dawn, odds and sods chuffed flabbergasted golly gosh
+              terribly.
+            </p>
+          </div>
+        </div>
       </div>
     );
   }
