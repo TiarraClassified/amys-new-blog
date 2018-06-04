@@ -3,13 +3,17 @@ import Routes from "./routes";
 import Navbar from "./components/Navbar";
 import "./reset.css";
 import "./App.css";
+import StoryProvider from "./components/StoryProvider";
+// import { withRouter } from "react-router-dom";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <Navbar />
-        <Routes />
+        <StoryProvider>
+          <Routes />
+        </StoryProvider>
       </div>
     );
   }

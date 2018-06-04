@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../../App.css";
+import { Link } from "react-router-dom";
 
 export default class Scroll extends Component {
   constructor() {
@@ -73,12 +74,17 @@ export default class Scroll extends Component {
             this.state.fade1 ? { opacity: 1, transition: "3s" } : { opacity: 0 }
           }
         >
-          <p className="timelinetitle">
-            {this.props.blogs.length > 0 && this.props.blogs[2].title}
-          </p>
+          <Link
+            to={`/story/${this.props.blogs[0].id}`}
+            style={{ textDecoration: "none" }}
+          >
+            <p className="timelinetitle">
+              {this.props.blogs.length > 0 && this.props.blogs[0].title}
+            </p>
+          </Link>
 
           <p className="timelinedate">
-            {this.props.blogs.length > 0 && this.props.blogs[2].date}
+            {this.props.blogs.length > 0 && this.props.blogs[0].date}
           </p>
         </div>
 
@@ -88,11 +94,16 @@ export default class Scroll extends Component {
             this.state.fade2 ? { opacity: 1, transition: "3s" } : { opacity: 0 }
           }
         >
-          <p className="timelinetitle">
-            {this.props.blogs.length > 0 && this.props.blogs[3].title}
-          </p>
+          <Link
+            to={`/story/${this.props.blogs[1].id}`}
+            style={{ textDecoration: "none" }}
+          >
+            <p className="timelinetitle">
+              {this.props.blogs.length > 0 && this.props.blogs[1].title}
+            </p>
+          </Link>
           <p className="timelinedate">
-            {this.props.blogs.length > 0 && this.props.blogs[3].date}
+            {this.props.blogs.length > 0 && this.props.blogs[1].date}
           </p>
         </div>
 
@@ -102,11 +113,16 @@ export default class Scroll extends Component {
             this.state.fade3 ? { opacity: 1, transition: "3s" } : { opacity: 0 }
           }
         >
-          <p className="timelinetitle">
-            {this.props.blogs.length > 0 && this.props.blogs[4].title}
-          </p>
+          <Link
+            to={`/story/${this.props.blogs[2].id}`}
+            style={{ textDecoration: "none" }}
+          >
+            <p className="timelinetitle">
+              {this.props.blogs.length > 0 && this.props.blogs[2].title}
+            </p>
+          </Link>
           <p className="timelinedate">
-            {this.props.blogs.length > 0 && this.props.blogs[4].date}
+            {this.props.blogs.length > 0 && this.props.blogs[2].date}
           </p>
         </div>
 
@@ -116,11 +132,16 @@ export default class Scroll extends Component {
             this.state.fade4 ? { opacity: 1, transition: "3s" } : { opacity: 0 }
           }
         >
-          <p className="timelinetitle">
-            {this.props.blogs.length > 0 && this.props.blogs[5].title}
-          </p>
+          <Link
+            to={`/story/${this.props.blogs[3].id}`}
+            style={{ textDecoration: "none" }}
+          >
+            <p className="timelinetitle">
+              {this.props.blogs.length > 0 && this.props.blogs[3].title}
+            </p>
+          </Link>
           <p className="timelinedate">
-            {this.props.blogs.length > 0 && this.props.blogs[5].date}
+            {this.props.blogs.length > 0 && this.props.blogs[3].date}
           </p>
         </div>
       </div>
