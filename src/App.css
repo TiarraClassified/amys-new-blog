@@ -18,7 +18,6 @@ body {
 .nav-link {
   text-decoration: none;
   padding: 20px;
-  /* color: black; */
 }
 
 .nav-link:visited {
@@ -174,4 +173,31 @@ body {
 .timelinedate {
   font-size: 15px;
   color: #c17d47;
+}
+
+#story {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  margin-top: 30px;
+}
+
+#story img {
+  width: 50%;
+  padding: 20px;
+}
+
+#story p {
+  width: 100%;
+  padding: 20px;
+}
+
+#story-text {
+  width: 45%;
+}
+
+#story-text h1 {
+  padding-top: 20px;
+  text-align: center;
+  font-weight: bold;
 }
