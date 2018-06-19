@@ -4,13 +4,6 @@ import Title from "./wee-components/Title";
 import Scroll from "./wee-components/Scroll";
 
 export default class Landing extends Component {
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     blogs: []
-  //   };
-  // }
-
   render() {
     return (
       <div>

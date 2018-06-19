@@ -4,7 +4,6 @@ import Navbar from "./components/Navbar";
 import "./reset.css";
 import "./App.css";
 import StoryProvider from "./components/StoryProvider";
-// import { withRouter } from "react-router-dom";
 
 class App extends Component {
   render() {
@@ -20,3 +19,5 @@ class App extends Component {
 }
 
 export default App;
+
+//have the navbar do login and then pass down session to routes?

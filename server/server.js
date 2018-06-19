@@ -22,8 +22,6 @@ app.use(
 
 app.get("/api/getBlogs", brain.getBlogs);
 
-// app.post("/api/updateBackground", brain.background);
-
 app.post(
   "/login",
   function(req, res, next) {
@@ -67,6 +65,10 @@ app.post(
       });
   }
 );
+
+//REQUIRE ADMIN TO BE SIGNED IN TO HIT THESE ENDPOINTS
+
+// app.post("/api/updateBackground", brain.background);
 
 massive(process.env.CONNECTION).then(db => {
   app.set("db", db);
