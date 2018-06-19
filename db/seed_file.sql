@@ -1,5 +1,7 @@
 create table blogs (id serial primary key, title text, content text, background text, date text);
 
+create table admincreds (id serial primary key, username varchar(50), password varchar(180));
+
 insert into blogs (title, content, date)
 values ('On and Off', '"Have you tried turning it off and then on agai.. . ." Meghan began her monotonous greeting. 
 

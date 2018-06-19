@@ -116,7 +116,7 @@ export default class Scroll extends Component {
                   </p>
                 </div>
 
-                <div
+                {/* <div
                   className="right"
                   style={
                     this.state.fade3
@@ -156,7 +156,7 @@ export default class Scroll extends Component {
                   <p className="timelinedate">
                     {blogs.length > 0 && blogs[3].date}
                   </p>
-                </div>
+                </div> */}
               </div>
             );
           }
