@@ -13,5 +13,16 @@ module.exports = {
       .then(blog => {
         res.send(blog);
       });
+  },
+  deleteBlog: (req, res) => {
+    let { id } = req.params;
+    console.log("hitting delete", id);
+    req.app
+      .get("db")
+      .deleteBlog(id)
+      .then(results => {
+        res.send("Literacy Destroyed");
+      })
+      .catch(err => console.log(err));
   }
 };

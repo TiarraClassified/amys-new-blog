@@ -29,8 +29,6 @@ app.post(
 
     if (create) {
       console.log("hitting create");
-      // var salt = bcrypt.genSaltSync(10);
-      // var safePassword = bcrypt.hashSync(pw, salt);
 
       bcrypt.hash(pw, 10, function(err, hash) {
         app
@@ -72,6 +70,9 @@ app.post(
 //REQUIRE ADMIN TO BE SIGNED IN TO HIT THESE ENDPOINTS
 
 // app.post("/api/updateBackground", brain.background);
+
+app.delete("/blog:id", brain.deleteBlog);
+
 app.get("/verification", function(req, res) {
   console.log("session", req.session.user);
   if (req.session.user) {

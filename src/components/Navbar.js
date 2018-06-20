@@ -22,7 +22,7 @@ export default function Navbar() {
               un: "the king"
             };
             axios.post("/login", body).then(res => {
-              console.log(res);
+              window.location.href = "http://localhost:3000/admin";
             });
           }}
         />

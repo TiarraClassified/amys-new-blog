@@ -19,5 +19,3 @@ class App extends Component {
 }
 
 export default App;
-
-//have the navbar do login and then pass down session to routes?
