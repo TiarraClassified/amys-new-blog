@@ -7,10 +7,10 @@ const express = require("express"),
   app = express(),
   massive = require("massive"),
   brain = require("./controller"),
-  bcrypt = require("bcryptjs"),
-  salt = bcrypt.genSaltSync(10);
+  bcrypt = require("bcryptjs");
 
 app.use(bodyParser.json());
+app.use(cors());
 
 app.use(
   session({
@@ -25,19 +25,24 @@ app.get("/api/getBlogs", brain.getBlogs);
 app.post(
   "/login",
   function(req, res, next) {
-    let { create, pw, un } = req.body;
+    var { create, pw, un } = req.body;
 
     if (create) {
       console.log("hitting create");
-      var safePassword = bcrypt.hashSync(pw, salt);
-      app
-        .get("db")
-        .insertPW(un, safePassword)
-        .then(creds => {
-          req.session.user = creds[0].id;
-          console.log("req.session.user", req.session.user);
-          res.status(200).send("your existence has been validated.");
-        });
+      // var salt = bcrypt.genSaltSync(10);
+      // var safePassword = bcrypt.hashSync(pw, salt);
+
+      bcrypt.hash(pw, 10, function(err, hash) {
+        app
+          .get("db")
+          .insertPW(un, hash)
+          .then(creds => {
+            req.session.user = creds[0].id;
+            console.log("req.session.user", req.session.user);
+            res.status(200).send("your existence has been validated.");
+          })
+          .catch(e => console.log(e));
+      });
     } else {
       next();
     }
@@ -49,19 +54,17 @@ app.post(
       .get("db")
       .getAdminCreds(un)
       .then(resp => {
-        console.log(
-          "pw in db",
-          bcrypt.hashSync(pw, salt),
-          "vs",
-          resp[0].password
-        );
-        if (bcrypt.hashSync(pw, salt) === resp[0].password) {
-          req.session.user = resp[0].id;
-          console.log("new session user", req.session.user);
-          res.send("your existence has been validated.");
-        } else {
-          res.status(401).send("Get outta here!");
-        }
+        console.log("pw in db", resp[0].password);
+
+        bcrypt.compare(pw, resp[0].password, function(err, rez) {
+          console.log("results", rez);
+          if (rez) {
+            req.session.user = resp[0].id;
+            res.send("your existence has been validated.");
+          } else {
+            res.status(401).send("Get outta here!");
+          }
+        });
       });
   }
 );
@@ -69,6 +72,14 @@ app.post(
 //REQUIRE ADMIN TO BE SIGNED IN TO HIT THESE ENDPOINTS
 
 // app.post("/api/updateBackground", brain.background);
+app.get("/verification", function(req, res) {
+  console.log("session", req.session.user);
+  if (req.session.user) {
+    res.send(true);
+  } else {
+    res.send(false);
+  }
+});
 
 massive(process.env.CONNECTION).then(db => {
   app.set("db", db);

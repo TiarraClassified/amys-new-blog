@@ -15,10 +15,8 @@ export default function Routes() {
       <Route path="/about" component={About} />
       <Route path="/storyroulette" component={StoryRoulette} />
       <Route path="/story/:id" component={Story} />
-      <AuthRouter path="/admin" component={Admin} />
-      <AuthRouter path="/addEdit" component={AddEdit} />
+      <Route path="/admin" component={AuthRouter(Admin)} />
+      <Route path="/addEdit" component={AuthRouter(AddEdit)} />
     </Switch>
   );
 }
-
-//can't I just put the higher order component in component={AddEdit(comp)}? That makes more sense to me.
