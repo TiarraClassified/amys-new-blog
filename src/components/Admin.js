@@ -31,10 +31,10 @@ export default class Admin extends Component {
           Welcome, Amy! What eloquence will you bless the world with today, and
           what would you like to do?
         </p>
-        <Link to="/addEdit">
+        <Link to="/addEdit/0">
           <button>Add</button>
         </Link>
-        <Link to="/addEdit">
+        <Link to={`/addEdit/${this.state.id}`}>
           <button>Edit</button>
         </Link>
         <button onClick={() => this.deleteStory()}>Delete</button>

@@ -16,7 +16,7 @@ export default function Routes() {
       <Route path="/storyroulette" component={StoryRoulette} />
       <Route path="/story/:id" component={Story} />
       <Route path="/admin" component={AuthRouter(Admin)} />
-      <Route path="/addEdit" component={AuthRouter(AddEdit)} />
+      <Route path="/addEdit/:id" component={AuthRouter(AddEdit)} />
     </Switch>
   );
 }

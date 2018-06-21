@@ -24,5 +24,15 @@ module.exports = {
         res.send("Literacy Destroyed");
       })
       .catch(err => console.log(err));
+  },
+  getBlog: (req, res) => {
+    let { id } = req.params;
+    req.app
+      .get("db")
+      .getBlog(id)
+      .then(blog => {
+        console.log("getting blog", blog);
+        res.send(blog[0]);
+      });
   }
 };

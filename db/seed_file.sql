@@ -2,6 +2,9 @@ create table blogs (id serial primary key, title text, content text, background 
 
 create table admincreds (id serial primary key, username varchar(50), password varchar(180));
 
+insert into blogs (id, title, content, date)
+values (0, 'Add Title', 'Spritz Some Words Here', 'Chronos Job Security');
+
 insert into blogs (title, content, date)
 values ('On and Off', '"Have you tried turning it off and then on agai.. . ." Meghan began her monotonous greeting. 
 

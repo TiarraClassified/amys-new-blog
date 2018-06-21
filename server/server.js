@@ -72,6 +72,7 @@ app.post(
 // app.post("/api/updateBackground", brain.background);
 
 app.delete("/blog:id", brain.deleteBlog);
+app.get("/blog:id", brain.getBlog);
 
 app.get("/verification", function(req, res) {
   console.log("session", req.session.user);
