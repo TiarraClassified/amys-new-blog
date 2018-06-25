@@ -15,12 +15,13 @@ export default class AddEdit extends Component {
       uploadedFile: "",
       image: null,
       cloudFile: "",
-      content: null
+      content: null,
+      title: null
     };
   }
 
   componentDidMount() {
-    console.log(this.props.id, "id");
+    // console.log(this.props.id, "id");
     axios.get(`/blog${this.props.id}`).then(res => {
       this.setState({
         blog: res.data,
@@ -56,7 +57,8 @@ export default class AddEdit extends Component {
           let body = {
             background: this.state.cloudFile,
             id: this.props.id,
-            content: this.state.content
+            content: this.state.content,
+            title: this.state.title
           };
           axios.post("/story", body).then(res => {
             console.log(res.data);
@@ -69,10 +71,25 @@ export default class AddEdit extends Component {
     this.setState({ content: e.target.value });
   }
 
+  updateTitle(e) {
+    // console.log("hitting setstate");
+    this.setState({ title: e.target.value });
+  }
+
   render() {
     return (
       <div id="addEdit">
-        {" "}
+        <input
+          type="text"
+          value={
+            this.state.blog !== null &&
+            (this.state.title || this.state.blog.title)
+          }
+          onChange={e => {
+            this.updateTitle(e);
+          }}
+        />
+
         <Dropzone
           id="dropzone"
           multiple={false}
@@ -80,7 +97,7 @@ export default class AddEdit extends Component {
           onDrop={this.onImageDrop.bind(this)}
           className="dropzone"
         >
-          {JSON.stringify(this.state.blog)}
+          {/* {JSON.stringify(this.state.blog)} */}
           {this.state.blog !== null &&
             (this.state.image !== null ? (
               <img

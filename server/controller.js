@@ -6,16 +6,28 @@ module.exports = {
     });
   },
   addEditStory: (req, res) => {
-    let { background, id, content } = req.body;
+    let { background, id, content, title } = req.body;
     console.log("backend stats", id, background, content);
 
-    req.app
-      .get("db")
-      .updateStory(background, content, id)
-      .then(story => {
-        console.log("it worked", story);
-        res.send(story);
-      });
+    if (id == 0) {
+      console.log("hitting id=0");
+      let date = new Date();
+      let newdate = date.toString().substr(3, 12);
+      req.app
+        .get("db")
+        .addStory(background, content, title, newdate)
+        .then(story => {
+          res.send(story);
+        });
+    } else {
+      req.app
+        .get("db")
+        .updateStory(background, content, title, id)
+        .then(story => {
+          console.log("it worked", story);
+          res.send(story);
+        });
+    }
   },
   deleteBlog: (req, res) => {
     let { id } = req.params;

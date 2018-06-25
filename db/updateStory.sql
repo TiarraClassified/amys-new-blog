@@ -1,4 +1,4 @@
 update blogs
-set ("background", "content") = ($1,$2)
-where "id" = $3 
+set ("background", "content", "title") = ($1,$2, $3)
+where "id" = $4 
 returning *;
