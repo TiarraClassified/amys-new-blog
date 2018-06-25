@@ -5,13 +5,16 @@ module.exports = {
       res.send(blogs);
     });
   },
-  background: (req, res) => {
-    let { background, id } = req.body;
+  addEditStory: (req, res) => {
+    let { background, id, content } = req.body;
+    console.log("backend stats", id, background, content);
+
     req.app
       .get("db")
-      .updateBackground([background, id])
-      .then(blog => {
-        res.send(blog);
+      .updateStory(background, content, id)
+      .then(story => {
+        console.log("it worked", story);
+        res.send(story);
       });
   },
   deleteBlog: (req, res) => {
@@ -21,7 +24,7 @@ module.exports = {
       .get("db")
       .deleteBlog(id)
       .then(results => {
-        res.send("Literacy Destroyed");
+        res.send("Farenheit 451");
       })
       .catch(err => console.log(err));
   },

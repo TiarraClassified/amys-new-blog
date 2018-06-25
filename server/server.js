@@ -69,7 +69,7 @@ app.post(
 
 //REQUIRE ADMIN TO BE SIGNED IN TO HIT THESE ENDPOINTS
 
-// app.post("/api/updateBackground", brain.background);
+app.post("/story", brain.addEditStory);
 
 app.delete("/blog:id", brain.deleteBlog);
 app.get("/blog:id", brain.getBlog);

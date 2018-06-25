@@ -15,8 +15,10 @@
     "massive": "^4.8.3",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
+    "react-dropzone": "^4.2.11",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "superagent": "^3.8.3"
   },
   "scripts": {
     "start": "PORT=3000 react-scripts start",

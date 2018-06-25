@@ -19,10 +19,19 @@ export default function AuthRouter(Comp) {
     }
 
     render() {
-      console.log("state", this.state.verification);
+      console.log(
+        "state",
+        this.state.verification,
+        "params",
+        this.props.match.params
+      );
       return (
         <div>
-          {this.state.done && this.state.verification ? <Comp /> : <Landing />}
+          {this.state.done && this.state.verification ? (
+            <Comp id={this.props.match.params.id} />
+          ) : (
+            <Landing />
+          )}
         </div>
       );
     }
