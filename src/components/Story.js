@@ -28,7 +28,10 @@ export default class Story extends Component {
     return (
       <StoryContext.Consumer>
         {blogs => {
-          let current = blogs[id] || { background: null, title: null };
+          let current = blogs.filter(blog => blog.id == id)[0] || {
+            background: null,
+            title: null
+          };
           return (
             <div id="story">
               <img

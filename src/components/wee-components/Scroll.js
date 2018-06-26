@@ -60,6 +60,7 @@ export default class Scroll extends Component {
     return (
       <StoryContext.Consumer>
         {blogs => {
+          console.log("blogs", blogs);
           if (blogs.length > 0) {
             return (
               <div className="timeline">
