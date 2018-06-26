@@ -7,8 +7,9 @@ export default function Table(props) {
       {blogs => {
         if (blogs.length > 0) {
           return (
-            <table>
-              <thead>
+            <table id="story-table">
+              <caption>List of Stories</caption>
+              <thead id="headers">
                 <tr>
                   <th>Select</th>
                   <th>Name</th>
@@ -18,13 +19,13 @@ export default function Table(props) {
               <tbody>
                 {blogs.map((blog, index) => {
                   return (
-                    <tr key={blog.id}>
+                    <tr key={blog.id} className="table-row">
                       <td
                         onClick={() => {
                           props.select(index, blog.id);
                         }}
                       >
-                        {blog.id}}
+                        {blog.id}
                       </td>
                       <td>{blog.title}</td>
                       <td>{blog.date}</td>

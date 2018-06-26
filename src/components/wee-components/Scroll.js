@@ -60,8 +60,8 @@ export default class Scroll extends Component {
     return (
       <StoryContext.Consumer>
         {blogs => {
-          console.log("blogs", blogs);
           if (blogs.length > 0) {
+            var transitionTime = 3;
             return (
               <div className="timeline">
                 <p className="timelinetext">Story Timeline</p>
@@ -69,95 +69,66 @@ export default class Scroll extends Component {
                   className="line"
                   style={
                     this.state.line
-                      ? { opacity: 1, height: "1000px", transition: "3s" }
+                      ? {
+                          opacity: 1,
+                          height: "1000px",
+                          transition: "3s"
+                        }
                       : { opacity: 0, height: 0 }
                   }
                 />
 
-                <div
-                  className="right"
-                  style={
-                    this.state.fade1
-                      ? { opacity: 1, transition: "3s" }
-                      : { opacity: 0 }
-                  }
-                >
-                  <Link
-                    to={`/story/${blogs[0].id}`}
-                    style={{ textDecoration: "none" }}
-                  >
-                    <p className="timelinetitle">
-                      {blogs.length > 0 && blogs[0].title}
-                    </p>
-                  </Link>
+                {blogs.map((blog, index) => {
+                  ++transitionTime;
+                  if (index % 2 === 0) {
+                    return (
+                      <div
+                        className="right"
+                        style={
+                          this.state.fade1
+                            ? { opacity: 1, transition: `${transitionTime}s` }
+                            : { opacity: 0 }
+                        }
+                      >
+                        <Link
+                          to={`/story/${blog.id}`}
+                          style={{ textDecoration: "none" }}
+                        >
+                          <p className="timelinetitle">
+                            {blogs.length > 0 && blog.title}
+                          </p>
+                        </Link>
 
-                  <p className="timelinedate">
-                    {blogs.length > 0 && blogs[0].date}
-                  </p>
-                </div>
-
-                <div
-                  className="left"
-                  style={
-                    this.state.fade2
-                      ? { opacity: 1, transition: "3s" }
-                      : { opacity: 0 }
+                        <p className="timelinedate">
+                          {blogs.length > 0 && blog.date}
+                        </p>
+                      </div>
+                    );
+                  } else {
+                    return (
+                      <div
+                        className="left"
+                        style={
+                          this.state.fade2
+                            ? { opacity: 1, transition: `${transitionTime}s` }
+                            : { opacity: 0 }
+                        }
+                      >
+                        <Link
+                          to={`/story/${blog.id}`}
+                          style={{ textDecoration: "none" }}
+                        >
+                          <p className="timelinetitle">
+                            {blogs.length > 0 && blog.title}
+                          </p>
+                        </Link>
+                        <p className="timelinedate">
+                          {blogs.length > 0 && blog.date}
+                        </p>
+                      </div>
+                    );
                   }
-                >
-                  <Link
-                    to={`/story/${blogs[1].id}`}
-                    style={{ textDecoration: "none" }}
-                  >
-                    <p className="timelinetitle">
-                      {blogs.length > 0 && blogs[1].title}
-                    </p>
-                  </Link>
-                  <p className="timelinedate">
-                    {blogs.length > 0 && blogs[1].date}
-                  </p>
-                </div>
-
-                {/* <div
-                  className="right"
-                  style={
-                    this.state.fade3
-                      ? { opacity: 1, transition: "3s" }
-                      : { opacity: 0 }
-                  }
-                >
-                  <Link
-                    to={`/story/${blogs[2].id}`}
-                    style={{ textDecoration: "none" }}
-                  >
-                    <p className="timelinetitle">
-                      {blogs.length > 0 && blogs[2].title}
-                    </p>
-                  </Link>
-                  <p className="timelinedate">
-                    {blogs.length > 0 && blogs[2].date}
-                  </p>
-                </div>
-
-                <div
-                  className="left"
-                  style={
-                    this.state.fade4
-                      ? { opacity: 1, transition: "3s" }
-                      : { opacity: 0 }
-                  }
-                >
-                  <Link
-                    to={`/story/${blogs[3].id}`}
-                    style={{ textDecoration: "none" }}
-                  >
-                    <p className="timelinetitle">
-                      {blogs.length > 0 && blogs[3].title}
-                    </p>
-                  </Link>
-                  <p className="timelinedate">
-                    {blogs.length > 0 && blogs[3].date}
-                  </p>
-                </div> */}
+                })}
               </div>
             );
           }
