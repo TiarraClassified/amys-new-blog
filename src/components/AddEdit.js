@@ -16,7 +16,7 @@ export default class AddEdit extends Component {
       image: null,
       cloudFile: "",
       content: null,
-      title: null
+      title: ""
     };
   }
 
@@ -61,7 +61,7 @@ export default class AddEdit extends Component {
             title: this.state.title
           };
           axios.post("/story", body).then(res => {
-            console.log(res.data);
+            window.location.href = "http://localhost:3000/admin";
           });
         }
       });
@@ -81,10 +81,8 @@ export default class AddEdit extends Component {
       <div id="addEdit">
         <input
           type="text"
-          value={
-            this.state.blog !== null &&
-            (this.state.title || this.state.blog.title)
-          }
+          placeholder={this.state.blog !== null && this.state.blog.title}
+          value={this.state.title}
           onChange={e => {
             this.updateTitle(e);
           }}
