@@ -249,6 +249,9 @@ body {
 #wheel-display {
   width: 33vw;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #circle {
@@ -271,4 +274,8 @@ body {
 
 #storyRoulette {
   display: flex;
+}
+
+#wheel-display img {
+  width: 100%;
 }

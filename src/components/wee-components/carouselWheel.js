@@ -20,9 +20,10 @@ export default class CarouselWheel extends Component {
     };
   }
 
-  rotate(num) {
+  rotate(num, picture) {
     console.log(num);
     this.setState({ rotate: num });
+    this.props.select(picture);
   }
 
   render() {
@@ -31,7 +32,7 @@ export default class CarouselWheel extends Component {
         <div id="circle">
           <img
             onClick={() => {
-              this.rotate(0);
+              this.rotate(0, Testpic);
             }}
             src={Testpic}
             alt="temp"
@@ -42,7 +43,7 @@ export default class CarouselWheel extends Component {
           />
           <img
             onClick={() => {
-              this.rotate(324);
+              this.rotate(324, Test2);
             }}
             src={Test2}
             alt="temp"
@@ -55,7 +56,7 @@ export default class CarouselWheel extends Component {
           />
           <img
             onClick={() => {
-              this.rotate(288);
+              this.rotate(288, Test3);
             }}
             src={Test3}
             alt="temp"
@@ -68,7 +69,7 @@ export default class CarouselWheel extends Component {
           />
           <img
             onClick={() => {
-              this.rotate(252);
+              this.rotate(252, Test4);
             }}
             src={Test4}
             alt="temp"
@@ -81,7 +82,7 @@ export default class CarouselWheel extends Component {
           />
           <img
             onClick={() => {
-              this.rotate(216);
+              this.rotate(216, Test5);
             }}
             src={Test5}
             alt="temp"
@@ -94,7 +95,7 @@ export default class CarouselWheel extends Component {
           />
           <img
             onClick={() => {
-              this.rotate(180);
+              this.rotate(180, Test6);
             }}
             src={Test6}
             alt="temp"
@@ -107,7 +108,7 @@ export default class CarouselWheel extends Component {
           />
           <img
             onClick={() => {
-              this.rotate(144);
+              this.rotate(144, Test7);
             }}
             src={Test7}
             alt="temp"
@@ -120,7 +121,7 @@ export default class CarouselWheel extends Component {
           />
           <img
             onClick={() => {
-              this.rotate(108);
+              this.rotate(108, Test8);
             }}
             src={Test8}
             alt="temp"
@@ -133,7 +134,7 @@ export default class CarouselWheel extends Component {
           />
           <img
             onClick={() => {
-              this.rotate(72);
+              this.rotate(72, Test9);
             }}
             src={Test9}
             alt="temp"
@@ -146,7 +147,7 @@ export default class CarouselWheel extends Component {
           />
           <img
             onClick={() => {
-              this.rotate(36);
+              this.rotate(36, Test10);
             }}
             src={Test10}
             alt="temp"

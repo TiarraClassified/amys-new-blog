@@ -5,7 +5,8 @@ import axios from "axios";
 export default class StoryRoulette extends Component {
   constructor() {
     super();
-    this.state = { stories: null };
+    this.state = { stories: null, selected: null };
+    this.select = this.select.bind(this);
   }
 
   componentDidMount() {
@@ -14,12 +15,19 @@ export default class StoryRoulette extends Component {
       this.setState({ stories: res.data });
     });
   }
+
+  select(pictureURL) {
+    this.setState({ selected: pictureURL });
+  }
+
   render() {
     return (
       <div id="storyRoulette">
-        <Carousel />
+        <Carousel select={this.select} />
 
-        <div id="wheel-display" />
+        <div id="wheel-display">
+          <img src={`${this.state.selected}`} alt="some image" />
+        </div>
       </div>
     );
   }
