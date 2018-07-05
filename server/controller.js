@@ -49,5 +49,8 @@ module.exports = {
         console.log("getting blog", blog);
         res.send(blog[0]);
       });
+  },
+  getRandom: (req, res) => {
+    //generate array of 10 random numbers. But the numbers need to be in between the max and min number of stories.
   }
 };

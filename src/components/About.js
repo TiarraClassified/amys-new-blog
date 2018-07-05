@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import camelHair from "../camel-hair.jpg";
-import camelCoupe from "../camel-two-legs.jpg";
+// import camelHair from "../camel-hair.jpg";
+// import camelCoupe from "../camel-two-legs.jpg";
+import roseRing from "../amy-rose-ring.jpg";
+import Amy from "../Amy.jpg";
 
 export default class About extends Component {
   constructor() {
@@ -56,8 +58,8 @@ export default class About extends Component {
         <div className="about-info">
           <img
             onMouseEnter={() => this.switchText1()}
-            src={camelHair}
-            alt="camel hair"
+            src={Amy}
+            alt="author"
             style={
               this.state.image1
                 ? {
@@ -122,8 +124,8 @@ export default class About extends Component {
         <div className="about-info-2">
           <img
             onMouseEnter={() => this.switchText2()}
-            src={camelCoupe}
-            alt="camel coupe"
+            src={roseRing}
+            alt=" a rose with a fencer's epee sword and the author's wedding ring"
             style={
               this.state.image2
                 ? {

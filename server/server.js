@@ -83,6 +83,8 @@ app.get("/verification", function(req, res) {
   }
 });
 
+app.get("/random", brain.getRandom);
+
 massive(process.env.CONNECTION).then(db => {
   app.set("db", db);
   app.listen(process.env.PORT, () =>

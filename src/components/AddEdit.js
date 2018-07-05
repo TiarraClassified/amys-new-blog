@@ -101,10 +101,14 @@ export default class AddEdit extends Component {
               <img
                 className="thumbnail"
                 src={this.state.image.preview}
-                alt="previewed image"
+                alt="preview"
               />
             ) : (
-              <img src={this.state.blog.background} className="thumbnail" />
+              <img
+                src={this.state.blog.background}
+                className="thumbnail"
+                alt="background of story chosen by author"
+              />
             ))}
         </Dropzone>
         <textarea

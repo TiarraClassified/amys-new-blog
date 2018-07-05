@@ -4,8 +4,9 @@
 body {
   font-family: "Raleway", sans-serif;
   font-weight: 300;
-  background: #f7f5e5;
-  color: #c17d47;
+  background: #76323f;
+  /* color: #d7cec7; */
+  color: #c09f80;
 }
 
 #navbar {
@@ -21,14 +22,14 @@ body {
 }
 
 .nav-link:visited {
-  color: #c17d47;
+  color: #c09f80;
 }
 
 #title {
   font-family: "Ultra", serif;
   font-size: 85px;
   text-align: center;
-  color: white;
+  color: #c09f80;
   height: 80vh;
   background: url(./testbackground.jpg) repeat;
   -webkit-background-clip: text;
@@ -51,6 +52,7 @@ body {
   position: absolute;
   right: 0;
   width: 1px;
+  border: 1px solid #c09f80;
 }
 
 #about {
@@ -98,7 +100,7 @@ body {
 }
 
 .timeline {
-  color: #c17d47;
+  color: #c09f80;
   position: absolute;
   padding: 50px;
   display: flex;
@@ -111,7 +113,7 @@ body {
 .timelinetext {
   text-align: center;
   font-size: 50px;
-  border-bottom: 4px double #c17d47;
+  border-bottom: 4px double #c09f80;
   padding: 20px;
   width: 400px;
   margin-bottom: 10px;
@@ -131,7 +133,7 @@ body {
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background: #c17d47;
+  background: #c09f80;
   position: absolute;
   right: 0;
   top: 0;
@@ -152,13 +154,13 @@ body {
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background: #c17d47;
+  background: #c09f80;
   position: absolute;
   margin-left: -25px;
 }
 
 .line {
-  border-right: 2px solid #c17d47;
+  border-right: 2px solid #c09f80;
   width: 2px;
   position: absolute;
   left: 50%;
@@ -168,11 +170,11 @@ body {
 
 .timelinetitle {
   font-size: 30px;
-  color: #c17d47;
+  color: #c09f80;
 }
 .timelinedate {
   font-size: 15px;
-  color: #c17d47;
+  color: #c09f80;
 }
 
 #story {
@@ -237,4 +239,36 @@ body {
 #headers {
   font-size: 20px;
   font-weight: bold;
+}
+
+#wheel {
+  width: 66vw;
+  height: 100vh;
+  position: relative;
+}
+#wheel-display {
+  width: 33vw;
+  height: 100vh;
+}
+
+#circle {
+  position: absolute;
+  top: 25%;
+  left: 35%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 1px solid #d7cec7;
+}
+
+#wheel img {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  top: calc(50% - 20px);
+  left: calc(50% - 20px);
+}
+
+#storyRoulette {
+  display: flex;
 }
