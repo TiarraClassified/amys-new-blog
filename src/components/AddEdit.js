@@ -21,7 +21,6 @@ export default class AddEdit extends Component {
   }
 
   componentDidMount() {
-    // console.log(this.props.id, "id");
     axios.get(`/blog${this.props.id}`).then(res => {
       this.setState({
         blog: res.data,
@@ -72,7 +71,6 @@ export default class AddEdit extends Component {
   }
 
   updateTitle(e) {
-    // console.log("hitting setstate");
     this.setState({ title: e.target.value });
   }
 
@@ -95,7 +93,6 @@ export default class AddEdit extends Component {
           onDrop={this.onImageDrop.bind(this)}
           className="dropzone"
         >
-          {/* {JSON.stringify(this.state.blog)} */}
           {this.state.blog !== null &&
             (this.state.image !== null ? (
               <img

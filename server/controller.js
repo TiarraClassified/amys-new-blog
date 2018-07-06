@@ -51,6 +51,11 @@ module.exports = {
       });
   },
   getRandom: (req, res) => {
-    //generate array of 10 random numbers. But the numbers need to be in between the max and min number of stories.
+    req.app
+      .get("db")
+      .getRandom()
+      .then(stories => {
+        res.send(stories);
+      });
   }
 };
