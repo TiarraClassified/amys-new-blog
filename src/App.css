@@ -165,7 +165,7 @@ body {
   position: absolute;
   left: 50%;
   margin-left: -8.5px;
-  top: 20%;
+  top: 12%;
 }
 
 .timelinetitle {
@@ -242,7 +242,7 @@ body {
 }
 
 #wheel {
-  width: 66vw;
+  width: 63vw;
   height: 100vh;
   position: relative;
 }
@@ -251,7 +251,11 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  margin-top: 15%;
+  text-align: center;
+  margin-right: 10%;
+  font-size: 40px;
+  text-decoration: none;
 }
 
 #circle {
@@ -274,8 +278,4 @@ body {
 
 #storyRoulette {
   display: flex;
-}
-
-#wheel-display img {
-  width: 100%;
 }

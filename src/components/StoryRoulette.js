@@ -8,7 +8,7 @@ export default class StoryRoulette extends Component {
     super();
     this.state = {
       stories: [],
-      selected: null
+      selected: { title: "Select a Picture", date: "The only time is now" }
     };
     this.select = this.select.bind(this);
   }
@@ -32,9 +32,13 @@ export default class StoryRoulette extends Component {
 
         <div id="wheel-display">
           {this.state.selected && (
-            <Link to={`/story/${this.state.selected.id}`}>
-              <p>{this.state.selected.title}</p>
-              <p>{this.state.selected.date}</p>
+            <Link
+              to={`/story/${this.state.selected.id}`}
+              style={{ textDecoration: "none", color: "#D7CEC7" }}
+            >
+              <p>Title: {this.state.selected.title}</p>
+              <br />
+              <p>Date: {this.state.selected.date}</p>
             </Link>
           )}
         </div>
