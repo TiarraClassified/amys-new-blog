@@ -279,3 +279,25 @@ body {
 #storyRoulette {
   display: flex;
 }
+
+#modal {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  background: #565656;
+  /* background: #d7cec7; */
+}
+
+#backdrop {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9998;
+  background: rgba(0, 0, 0, 0.4);
+}

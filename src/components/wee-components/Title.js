@@ -21,6 +21,7 @@ export default class Title extends Component {
       this.setState({ shiny: true });
     }, 2300);
   }
+
   render() {
     return (
       <div>
