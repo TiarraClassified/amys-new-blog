@@ -31,7 +31,7 @@ export default class Modal extends Component {
     console.log("state", this.state.password, this.state.username);
     if (this.props.open) {
       return (
-        <div id="backdrop" onClick={() => this.props.close()}>
+        <div id="backdrop">
           <div id="modal">
             Welcome Amy! Please verify that this is you! <br />
             Password:{" "}
@@ -55,6 +55,7 @@ export default class Modal extends Component {
             >
               Submit
             </button>
+            <button onClick={() => this.props.close()}>Cancel</button>
           </div>
         </div>
       );

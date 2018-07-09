@@ -46,7 +46,7 @@ module.exports = {
       .get("db")
       .getBlog(id)
       .then(blog => {
-        console.log("getting blog", blog);
+        // console.log("getting blog", blog);
         res.send(blog[0]);
       });
   },
@@ -55,6 +55,12 @@ module.exports = {
       .get("db")
       .getRandom()
       .then(stories => {
+        //The following sees if the test story was pulled. If it was not pulled, then I send one extra story, which won't be displayed anyway.
+        stories.forEach((story, index) => {
+          if (story.id === 0) {
+            stories.splice(index, 1);
+          }
+        });
         res.send(stories);
       });
   }

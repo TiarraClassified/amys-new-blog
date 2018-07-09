@@ -16,7 +16,6 @@ export default class StoryRoulette extends Component {
   componentDidMount() {
     //pull 10 random stories
     axios.get("/random").then(res => {
-      console.log(res.data);
       this.setState({ stories: res.data });
     });
   }

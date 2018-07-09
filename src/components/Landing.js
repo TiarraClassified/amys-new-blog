@@ -17,14 +17,13 @@ export default class Landing extends Component {
   }
 
   render() {
-    console.log(this.state.openModal);
     return (
       <div>
         <Title />
         <Scroll />
         <Modal open={this.state.openModal} close={this.openModal} />
         <div
-          onClick={() => this.openModal()}
+          onClick={() => this.openModal(true)}
           style={{
             width: "20px",
             height: "20px",

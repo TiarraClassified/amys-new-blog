@@ -1,3 +1,3 @@
 select * from blogs
 ORDER BY RANDOM()
-limit 10;
+limit 11;
