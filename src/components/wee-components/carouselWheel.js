@@ -1,35 +1,43 @@
 import React, { Component } from "react";
-import Testpic from "../../camel-hair.jpg";
-import Test2 from "../../camel-two-legs.jpg";
-import Test3 from "../../dagger.jpg";
-import Test4 from "../../Amy.jpg";
-import Test5 from "../../amy-rose-ring.jpg";
-import Test6 from "../../camel-sun.jpg";
-import Test7 from "../../chess.jpg";
-import Test8 from "../../CSSsucks.png";
-import Test9 from "../../elon-musk-perfume.jpg";
-import Test10 from "../../testbackground.jpg";
+import logo from "../../trans-logo.png";
 
 export default class CarouselWheel extends Component {
   constructor() {
     super();
     this.state = {
-      rotate: 0
+      rotate: 0,
+      turnLogo: "0deg"
     };
   }
 
   rotate(num, story) {
     console.log(num);
-    this.setState({ rotate: num });
+    this.setState({
+      rotate: num,
+      turnLogo: this.state.turnLogo === "0deg" ? "360deg" : "0deg"
+    });
     this.props.select(story);
   }
 
   render() {
     const stories = this.props.stories;
+    console.log(this.state.turnLogo);
     return (
       stories.length > 0 && (
         <div id="wheel">
           <div id="circle">
+            <img
+              src={logo}
+              alt="logo for website"
+              style={{
+                transform: `rotate(${this.state.turnLogo})`,
+                transition: "0.5s",
+                width: "275px",
+                height: "250px",
+                top: "calc(50% - 126px)",
+                left: "calc(50% - 137.5px)"
+              }}
+            />
             <img
               onClick={() => {
                 this.rotate(0, stories[0]);
@@ -37,7 +45,7 @@ export default class CarouselWheel extends Component {
               src={stories[0].background}
               alt="temp"
               style={{
-                transform: `rotate(${this.state.rotate}deg) translate(100px)`,
+                transform: `rotate(${this.state.rotate}deg) translate(150px)`,
                 transition: "0.5s"
               }}
             />
@@ -50,7 +58,7 @@ export default class CarouselWheel extends Component {
               style={{
                 transform: `rotate(calc(36deg + ${
                   this.state.rotate
-                }deg)) translate(100px) `,
+                }deg)) translate(150px) `,
                 transition: "0.5s"
               }}
             />
@@ -63,7 +71,7 @@ export default class CarouselWheel extends Component {
               style={{
                 transform: `rotate(calc(72deg + ${
                   this.state.rotate
-                }deg)) translate(100px) `,
+                }deg)) translate(150px) `,
                 transition: "0.5s"
               }}
             />
@@ -76,7 +84,7 @@ export default class CarouselWheel extends Component {
               style={{
                 transform: `rotate(calc(108deg + ${
                   this.state.rotate
-                }deg)) translate(100px) `,
+                }deg)) translate(150px) `,
                 transition: "0.5s"
               }}
             />
@@ -89,7 +97,7 @@ export default class CarouselWheel extends Component {
               style={{
                 transform: `rotate(calc(144deg + ${
                   this.state.rotate
-                }deg)) translate(100px) `,
+                }deg)) translate(150px) `,
                 transition: "0.5s"
               }}
             />
@@ -102,7 +110,7 @@ export default class CarouselWheel extends Component {
               style={{
                 transform: `rotate(calc(180deg + ${
                   this.state.rotate
-                }deg)) translate(100px) `,
+                }deg)) translate(150px) `,
                 transition: "0.5s"
               }}
             />
@@ -115,7 +123,7 @@ export default class CarouselWheel extends Component {
               style={{
                 transform: `rotate(calc(216deg + ${
                   this.state.rotate
-                }deg)) translate(100px) `,
+                }deg)) translate(150px) `,
                 transition: "0.5s"
               }}
             />
@@ -128,7 +136,7 @@ export default class CarouselWheel extends Component {
               style={{
                 transform: `rotate(calc(252deg + ${
                   this.state.rotate
-                }deg)) translate(100px) `,
+                }deg)) translate(150px) `,
                 transition: "0.5s"
               }}
             />
@@ -141,7 +149,7 @@ export default class CarouselWheel extends Component {
               style={{
                 transform: `rotate(calc(288deg + ${
                   this.state.rotate
-                }deg)) translate(100px) `,
+                }deg)) translate(150px) `,
                 transition: "0.5s"
               }}
             />
@@ -154,7 +162,7 @@ export default class CarouselWheel extends Component {
               style={{
                 transform: `rotate(calc(324deg + ${
                   this.state.rotate
-                }deg)) translate(100px)`,
+                }deg)) translate(150px)`,
                 transition: "0.5s"
               }}
             />

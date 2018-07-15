@@ -1,5 +1,6 @@
 import React from "react";
 import Dagger from "../dagger.jpg";
+import logo from "../trans-logo.png";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
@@ -10,11 +11,7 @@ export default function Navbar() {
       </Link>
 
       <Link to="/">
-        <img
-          src={Dagger}
-          alt="dagger"
-          style={{ height: "50px", width: "50px" }}
-        />
+        <img src={logo} alt="logo" style={{ height: "80px", width: "100px" }} />
       </Link>
       <Link to="/storyroulette" className="nav-link">
         <div>Random Story</div>

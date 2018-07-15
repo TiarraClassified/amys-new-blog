@@ -4,9 +4,11 @@
 body {
   font-family: "Raleway", sans-serif;
   font-weight: 300;
+  /* background: #c09f80; */
   background: #76323f;
-  /* color: #d7cec7; */
+  /* color: #76323f; */
   color: #c09f80;
+  /* color: #ab7e54; */
 }
 
 #navbar {
@@ -23,6 +25,8 @@ body {
 
 .nav-link:visited {
   color: #c09f80;
+  /* color: #ab7e54; */
+  /* color: #76323f; */
 }
 
 #title {
@@ -30,6 +34,8 @@ body {
   font-size: 85px;
   text-align: center;
   color: #c09f80;
+  /* color: #ab7e54; */
+  /* color: #76323f; */
   height: 80vh;
   background: url(./testbackground.jpg) repeat;
   -webkit-background-clip: text;
@@ -52,7 +58,9 @@ body {
   position: absolute;
   right: 0;
   width: 1px;
+  /* border: 1px solid #76323f; */
   border: 1px solid #c09f80;
+  /* border: 1px solid #ab7e54; */
 }
 
 #about {
@@ -100,7 +108,9 @@ body {
 }
 
 .timeline {
+  /* color: #76323f; */
   color: #c09f80;
+  /* color: #ab7e54; */
   position: absolute;
   padding: 50px;
   display: flex;
@@ -114,6 +124,7 @@ body {
   text-align: center;
   font-size: 50px;
   border-bottom: 4px double #c09f80;
+
   padding: 20px;
   width: 400px;
   margin-bottom: 10px;
@@ -133,7 +144,9 @@ body {
   width: 15px;
   height: 15px;
   border-radius: 50%;
+  /* background: #ab7e54; */
   background: #c09f80;
+
   position: absolute;
   right: 0;
   top: 0;
@@ -154,13 +167,17 @@ body {
   width: 15px;
   height: 15px;
   border-radius: 50%;
+  /* background: #ab7e54; */
   background: #c09f80;
+
   position: absolute;
   margin-left: -25px;
 }
 
 .line {
+  /* border-right: 2px solid #ab7e54; */
   border-right: 2px solid #c09f80;
+
   width: 2px;
   position: absolute;
   left: 50%;
@@ -171,6 +188,7 @@ body {
 .timelinetitle {
   font-size: 30px;
   color: #c09f80;
+  /* color: #ab7e54; */
 }
 .timelinedate {
   font-size: 15px;
@@ -260,20 +278,20 @@ body {
 
 #circle {
   position: absolute;
-  top: 25%;
-  left: 35%;
-  width: 200px;
-  height: 200px;
+  top: 15%;
+  left: 30%;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
-  border: 1px solid #d7cec7;
 }
 
 #wheel img {
-  height: 40px;
-  width: 40px;
+  height: 50px;
+  width: 50px;
   position: absolute;
-  top: calc(50% - 20px);
-  left: calc(50% - 20px);
+  top: calc(50% - 25px);
+  left: calc(50% - 25px);
+  border-radius: 10px;
 }
 
 #storyRoulette {

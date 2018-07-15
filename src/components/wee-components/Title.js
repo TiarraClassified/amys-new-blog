@@ -5,8 +5,7 @@ export default class Title extends Component {
     super();
     this.state = {
       enter: false,
-      line: false,
-      shiny: false
+      line: false
     };
   }
 
@@ -16,10 +15,7 @@ export default class Title extends Component {
     }, 10);
     setTimeout(() => {
       this.setState({ line: true });
-    }, 1500);
-    setTimeout(() => {
-      this.setState({ shiny: true });
-    }, 2300);
+    }, 1000);
   }
 
   render() {
@@ -30,12 +26,10 @@ export default class Title extends Component {
           style={
             this.state.enter
               ? {
-                  transform: "translate(0, 0)",
                   opacity: 1,
                   transition: "1.5s"
                 }
               : {
-                  transform: "translate(-100px, -125px)",
                   opacity: 0
                 }
           }

@@ -8,7 +8,8 @@ export default class StoryRoulette extends Component {
     super();
     this.state = {
       stories: [],
-      selected: { title: "Select a Picture", date: "The only time is now" }
+      selected: { title: "Select a Picture", date: "The only time is now" },
+      display: false
     };
     this.select = this.select.bind(this);
   }
@@ -16,7 +17,7 @@ export default class StoryRoulette extends Component {
   componentDidMount() {
     //pull 10 random stories
     axios.get("/random").then(res => {
-      this.setState({ stories: res.data });
+      this.setState({ stories: res.data, display: true });
     });
   }
 
@@ -30,16 +31,17 @@ export default class StoryRoulette extends Component {
         <Carousel select={this.select} stories={this.state.stories} />
 
         <div id="wheel-display">
-          {this.state.selected && (
-            <Link
-              to={`/story/${this.state.selected.id}`}
-              style={{ textDecoration: "none", color: "#D7CEC7" }}
-            >
-              <p>Title: {this.state.selected.title}</p>
-              <br />
-              <p>Date: {this.state.selected.date}</p>
-            </Link>
-          )}
+          {this.state.selected &&
+            this.state.display && (
+              <Link
+                to={`/story/${this.state.selected.id}`}
+                style={{ textDecoration: "none", color: "#D7CEC7" }}
+              >
+                <p>Title: {this.state.selected.title}</p>
+                <br />
+                <p>Date: {this.state.selected.date}</p>
+              </Link>
+            )}
         </div>
       </div>
     );
